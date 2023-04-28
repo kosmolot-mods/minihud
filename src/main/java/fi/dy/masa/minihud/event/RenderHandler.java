@@ -149,7 +149,7 @@ public class RenderHandler implements IRenderer
     }
 
     @Override
-    public void onRenderTooltipLast(ItemStack stack, int x, int y)
+    public void onRenderTooltipLast(DrawContext drawContext, ItemStack stack, int x, int y)
     {
         if (stack.getItem() instanceof FilledMapItem)
         {
@@ -164,7 +164,7 @@ public class RenderHandler implements IRenderer
 
             if (render)
             {
-                fi.dy.masa.malilib.render.RenderUtils.renderShulkerBoxPreview(stack, x, y, Configs.Generic.SHULKER_DISPLAY_BACKGROUND_COLOR.getBooleanValue());
+                fi.dy.masa.malilib.render.RenderUtils.renderShulkerBoxPreview(stack, x, y, Configs.Generic.SHULKER_DISPLAY_BACKGROUND_COLOR.getBooleanValue(), drawContext);
             }
         }
     }
